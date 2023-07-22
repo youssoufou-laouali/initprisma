@@ -6,7 +6,7 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const swaggerConfig = new DocumentBuilder()
-    .setTitle('API avec ADM')
+    .setTitle('API avec INDI')
     .setDescription(
       'Coder son backend le plus rapidement possible de manière sécuriser',
     )
@@ -15,7 +15,6 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api', app, document);
-  app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
 }
 bootstrap();
